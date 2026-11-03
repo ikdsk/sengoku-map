@@ -6,7 +6,7 @@ import { dirname, join } from 'node:path';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dir = join(root, 'scripts/src/prov');
 mkdirSync(dir, { recursive: true });
-const UA = 'sengoku-map-build/0.1 (personal educational project; contact: daisukei@gmail.com)';
+const UA = 'sengoku-map-build/0.1 (personal educational project; +https://github.com/ikdsk/sengoku-map)';
 const N = { // 国ID -> Commons ファイル名の末尾
   mutsu: 'Mutsu', dewa: 'Dewa', sado: 'Sado', echigo: 'Echigo', noto: 'Noto', shimotsuke: 'Shimotsuke', hitachi: 'Hitachi',
   shimosa: 'Shimosa', kazusa: 'Kazusa', awa_b: 'Awa (Chiba)', kozuke: 'Kozuke', musashi: 'Musashi', etchu: 'Etchu', shinano: 'Shinano',

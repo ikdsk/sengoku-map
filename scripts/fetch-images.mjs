@@ -11,7 +11,7 @@ import { dirname, join } from 'node:path';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const LOG = '/tmp/sengoku-fetch.log';
-const UA = 'sengoku-map-build/0.1 (personal educational static site; contact: daisukei@gmail.com)';
+const UA = 'sengoku-map-build/0.1 (personal educational static site; +https://github.com/ikdsk/sengoku-map)';
 const WAIT = 400;
 const RETRY = process.argv.includes('--retry-failed');
 

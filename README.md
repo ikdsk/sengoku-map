@@ -2,6 +2,8 @@
 
 応仁の乱（1467）から大坂の陣（1615）まで、戦国大名の勢力圏が令制国（旧国）単位でどう変わったかを、アニメーションと画像で学ぶ静的 Web サイトです。ビルド不要・npm 依存なし。`file://` でも動きます（データは `window.SENGOKU` の JS ファイル）。
 
+公開URL: https://ikdsk.github.io/sengoku-map/ （GitHub Pages、main ブランチのルートをそのまま配信）
+
 ## 起動
 ```bash
 python3 -m http.server 8000     # → http://localhost:8000/
@@ -38,7 +40,11 @@ scripts/build-credits.mjs  CREDITS.md 生成
 - 家紋: Wikidata P94（紋章）→ 家紋らしい名前のリード画像。合戦: 記事のリード画像（屏風絵など）。城: 城記事のリード画像。
 - Commons の `extmetadata` でライセンスを検証し、PD・CC0・CC BY・CC BY-SA のみ許可。手動の除外は `scripts/src/image-exclusions.json`。
 
-## 出典・ライセンス
+## ライセンス・出典
+- **コード**（HTML/CSS/JS/スクリプト）: [AGPL-3.0](LICENSE)
+- **画像**: 各作者・各ライセンス（PD・CC0・CC BY・CC BY-SA）。upload.wikimedia.org からのホットリンクで、リポジトリには含みません。詳細は [CREDITS.md](CREDITS.md) とサイト内の画像クレジットページを参照
+- **旧国地図の原図**: Wikimedia Commons の Provinces of Japan 系 SVG、Ash Crow 作、CC BY 2.5（加工して使用）
+
 詳細は [CREDITS.md](CREDITS.md) とサイト内の画像クレジットページ。地図: Ash Crow（CC BY 2.5, Wikimedia Commons）。
 
 ## データについて
