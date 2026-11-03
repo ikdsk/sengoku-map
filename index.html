@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>戦国勢力図 ― 応仁の乱から大坂の陣まで</title>
+<meta name="description" content="1467年の応仁の乱から1615年の大坂の陣まで、戦国大名の勢力圏が令制国単位でどう変わったかを、アニメーションと画像で学ぶ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-view="home">
+<a class="skip" href="#map">本文へ</a>
+
+<header class="site-head" id="top">
+  <a class="brand" href="#/year/1467" aria-label="戦国勢力図 トップ">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-name">戦国勢力図</span>
+  </a>
+  <nav class="site-nav" aria-label="サイト内移動">
+    <a href="#map" data-nav="map">勢力図</a>
+    <a href="#story" data-nav="story">合戦と出来事</a>
+    <a href="#clans" data-nav="clans">大名家</a>
+    <a href="#people" data-nav="people">武将</a>
+    <a href="#/credits" data-nav="credits">画像クレジット</a>
+  </nav>
+</header>
+
+<main id="home">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h1 class="vert-title" id="hero-title"><span>戦国</span><span>勢力図</span></h1>
+      <div class="hero-text">
+        <p class="eyebrow">応仁元年（1467） ― 元和元年（1615）</p>
+        <p class="lead">守護大名の時代から、織田・豊臣・徳川へ。<br>約150年のあいだに、日本の「国」はどのように塗り替わっていったのか。</p>
+        <p class="hero-sub">令制国（旧国）単位の地図の上で、21の時点の勢力図を滑らかに動かして確かめます。<br>肖像画・家紋・屏風絵・城の写真はすべて Wikipedia / Wikimedia Commons から。</p>
+        <p class="hero-cta"><a class="btn btn-primary" href="#map">勢力図を動かす</a><a class="btn" href="#story">合戦と出来事から読む</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="map" aria-labelledby="map-title">
+    <div class="section-head">
+      <p class="section-no">壱</p>
+      <h2 id="map-title">勢力図の移り変わり</h2>
+      <p class="section-sub">スライダーを動かすか再生すると、国の色と境界が滑らかに変わります。国にマウスを重ねる（スマホはタップ）と、支配大名とその年の当主が表示されます。</p>
+    </div>
+
+    <div class="explorer" id="explorer">
+      <div class="explorer-map">
+        <div class="year-banner" aria-live="polite">
+          <div class="year-big"><span id="year-num">1467</span><small>年</small></div>
+          <div class="year-text"><b id="year-label"></b><span id="year-title"></span></div>
+        </div>
+        <div class="map-stage" id="main-map"></div>
+        <div class="controls" role="group" aria-label="年代の操作">
+          <button class="icon-btn" id="btn-prev" aria-label="前の年代へ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 5v14l-9-7zM6 5h2v14H6z"/></svg></button>
+          <button class="icon-btn play" id="btn-play" aria-label="再生" aria-pressed="false"><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg></button>
+          <button class="icon-btn" id="btn-next" aria-label="次の年代へ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l9-7zM16 5h2v14h-2z"/></svg></button>
+          <div class="slider-wrap">
+            <input type="range" id="year-slider" min="0" max="20" step="1" value="0" aria-label="年代スライダー">
+            <div class="ticks" id="ticks" aria-hidden="true"></div>
+          </div>
+          <label class="speed"><span>速さ</span>
+            <select id="speed" aria-label="再生の速さ"><option value="2600">ゆっくり</option><option value="1700" selected>ふつう</option><option value="1000">はやい</option></select>
+          </label>
+        </div>
+        <p class="map-note">国単位の概略です。実際は郡・城単位で入り組み、国人・寺社勢力も存在します。灰色は中小勢力・国人（または不確定）の国。</p>
+      </div>
+      <aside class="explorer-side">
+        <div class="year-note" id="year-note"></div>
+        <h3 class="side-h">勢力ランキング<small>（支配する国の数）</small></h3>
+        <div class="rank" id="rank" aria-live="off"></div>
+        <div class="rank-meta" id="rank-meta"></div>
+        <h3 class="side-h">凡例</h3>
+        <ul class="legend" id="legend"></ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="story" aria-labelledby="story-title">
+    <div class="section-head">
+      <p class="section-no">弐</p>
+      <h2 id="story-title">合戦と出来事</h2>
+      <p class="section-sub">スクロールすると、左の地図がその出来事の年に移ります。図版は屏風絵・合戦図・城の写真など。</p>
+    </div>
+    <div class="story" id="story-wrap">
+      <div class="story-map-col"><div class="story-map-sticky">
+        <div class="story-year"><span id="story-year">1467</span>年 <b id="story-year-label"></b></div>
+        <div class="map-stage" id="story-map"></div>
+        <ul class="legend legend-mini" id="story-legend"></ul>
+      </div></div>
+      <ol class="story-cards" id="story-cards"></ol>
+    </div>
+  </section>
+
+  <section class="section" id="clans" aria-labelledby="clans-title">
+    <div class="section-head">
+      <p class="section-no">参</p>
+      <h2 id="clans-title">大名家</h2>
+      <p class="section-sub">家をひらくと、家紋・歴代当主・勢力の推移・居城・関わる出来事を見られます。</p>
+    </div>
+    <div class="clan-grid" id="clan-grid"></div>
+  </section>
+
+  <section class="section section-alt" id="people" aria-labelledby="people-title">
+    <div class="section-head">
+      <p class="section-no">肆</p>
+      <h2 id="people-title">武将ギャラリー</h2>
+      <p class="section-sub">肖像画から人物の詳細へ。家で絞り込めます。</p>
+    </div>
+    <div class="people-filter" id="people-filter" role="group" aria-label="家で絞り込み"></div>
+    <div class="people-grid" id="people-grid"></div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="section-head">
+      <p class="section-no">伍</p>
+      <h2>このサイトについて</h2>
+    </div>
+    <div class="about-body">
+      <p>勢力図は、各時点で国（令制国）ごとに最も支配力の強かった大名家を1つ選んで塗り分けた<b>簡略化した概略</b>です。実際の戦国時代は、郡や城の単位で支配が入り組み、国人・寺社・一揆など多様な勢力が存在しました。判断のむずかしい国は灰色（中小勢力・国人）としています。</p>
+      <p>1600年は関ヶ原の戦い直後の状況で、東軍系の大名の領地は「徳川」の勢力として概括しています。1615年は大坂の陣の後です。</p>
+      <p>地図は Wikimedia Commons の <a href="https://commons.wikimedia.org/wiki/File:Provinces_of_Japan_with_names.svg" target="_blank" rel="noopener">Provinces of Japan with names.svg</a>（Ash Crow 作、<a href="https://creativecommons.org/licenses/by/2.5/" target="_blank" rel="noopener">CC BY 2.5</a>）を加工して使用しています。壱岐・対馬と蝦夷地を含め69区画です。海岸線・国境は現代の地図に基づく近似で、当時の国境とは細部が異なります。</p>
+      <p>画像はすべて Wikipedia / Wikimedia Commons のもの（PD・CC0・CC BY・CC BY-SA のみ）をホットリンクしています。作者・ライセンスは<a href="#/credits">画像クレジット</a>に一覧しています。</p>
+    </div>
+  </section>
+</main>
+
+<main id="credits-view" hidden>
+  <section class="section">
+    <div class="section-head">
+      <p class="section-no">附</p>
+      <h2>画像クレジット</h2>
+      <p class="section-sub">本サイトで使用している画像の作者・ライセンス・出典です。画像は upload.wikimedia.org からのホットリンクで、このサイトにはコピーを置いていません。</p>
+    </div>
+    <div id="credits-map"></div>
+    <div id="credits-list"></div>
+    <p class="back"><a href="#/year/1467" class="btn">勢力図にもどる</a></p>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <p>戦国勢力図 ― 勢力図は国単位の概略です。史実の細部は各項目の注記を参照してください。</p>
+  <p>画像： Wikipedia / Wikimedia Commons （作者・ライセンスは<a href="#/credits">画像クレジット</a>）　地図： Ash Crow, CC BY 2.5</p>
+</footer>
+
+<!-- 大名家パネル / 人物モーダル -->
+<div class="overlay" id="overlay" hidden>
+  <div class="overlay-backdrop" data-close></div>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+    <button class="close" data-close aria-label="閉じる"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" fill="none"/></svg></button>
+    <div class="sheet-body" id="sheet-body"></div>
+  </div>
+</div>
+
+<div class="tip" id="tip" hidden role="status"></div>
+
+<script src="data/map.js"></script>
+<script src="data/clans.js"></script>
+<script src="data/snapshots.js"></script>
+<script src="data/people.js"></script>
+<script src="data/events.js"></script>
+<script src="data/images.js"></script>
+<script src="js/util.js"></script>
+<script src="js/map.js"></script>
+<script src="js/explorer.js"></script>
+<script src="js/panels.js"></script>
+<script src="js/story.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/credits.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -58,7 +58,7 @@ window.SENGOKU.clans = [
   { id: 'asakura', name: '朝倉家', color: '#a98467', colorName: '路考茶', detail: true, wiki: '朝倉氏', base: '越前（一乗谷）', range: [1471, 1573],
     heads: [[1471, { n: '朝倉孝景（敏景）' }], [1548, 'asakura-yoshikage']],
     desc: '斯波氏の守護代から越前を奪い、一乗谷を城下町として栄えた。朝倉義景は将軍足利義昭を一時庇護したが上洛せず、織田信長と対立。1573年の刀根坂の戦いに敗れ、一乗谷で滅んだ。' },
-  { id: 'miyoshi', name: '三好家', color: '#7d5aa6', colorName: '菖蒲色', detail: true, wiki: '三好氏', base: '阿波・摂津', range: [1546, 1573],
+  { id: 'miyoshi', name: '三好家', color: '#7d5aa6', colorName: '菖蒲色', detail: true, wiki: '三好氏', base: '阿波・摂津', range: [1546, 1582],
     heads: [[1520, { n: '三好元長' }], [1532, 'miyoshi-nagayoshi'], [1564, { n: '三好義継' }]],
     desc: '阿波の細川氏被官から出て、三好長慶が細川氏・将軍家を畿内から追って事実上の天下人となった。長慶の死後は内紛と松永久秀らの動きで衰え、1573年に義継が信長に討たれた。' },
   { id: 'saito', name: '斎藤家', color: '#c9783a', colorName: '黄櫨染', detail: true, wiki: '斎藤氏', base: '美濃（稲葉山城）', range: [1542, 1567],

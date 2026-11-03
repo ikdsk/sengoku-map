@@ -30,7 +30,7 @@ window.SENGOKU.events = [
     text: '島津氏の北上で苦境に陥った大友宗麟が秀吉に救援を求め、秀吉は約20万の大軍で九州へ出兵。島津義久は降伏し、薩摩・大隅などの領有を許された。' },
   { id: 'odawara', year: 1590, snapshot: 1590, date: '1590年（天正18年）', title: '小田原征伐', wiki: '小田原征伐', people: ['toyotomi-hideyoshi', 'hojo-ujimasa', 'date-masamune', 'tokugawa-ieyasu'], clans: ['toyotomi', 'hojo', 'date', 'tokugawa'],
     text: '豊臣秀吉が約20万の大軍で小田原城を包囲。北条氏は降伏し、氏政は切腹した。伊達政宗らも秀吉に服属し、天下統一が完成。家康は関東に移封される。' },
-  { id: 'sekigahara', year: 1600, snapshot: 1600, date: '1600年（慶長5年）9月15日', title: '関ヶ原の戦い', wiki: '関ヶ原の戦い', people: ['tokugawa-ieyasu', 'ishida-mitsunari', 'kobayakawa-takakage', 'mori-terumoto'], clans: ['tokugawa', 'toyotomi', 'mori', 'uesugi'],
+  { id: 'sekigahara', year: 1600, snapshot: 1600, date: '1600年（慶長5年）9月15日', title: '関ヶ原の戦い', wiki: '関ヶ原の戦い', people: ['tokugawa-ieyasu', 'ishida-mitsunari', 'mori-terumoto', 'ii-naomasa'], clans: ['tokugawa', 'toyotomi', 'mori', 'uesugi'],
     text: '徳川家康の東軍と、石田三成・毛利輝元らの西軍が美濃の関ヶ原で激突。小早川秀秋らの寝返りもあり、東軍が一日で勝利した。戦後、西軍の大名は改易・減封され、家康は天下の実権を握る。' },
   { id: 'osaka', year: 1615, snapshot: 1615, date: '1615年（慶長20年）5月', title: '大坂夏の陣', wiki: '大坂の陣', people: ['tokugawa-ieyasu', 'tokugawa-hidetada', 'toyotomi-hideyori', 'sanada-yukimura'], clans: ['tokugawa', 'toyotomi'],
     text: '大坂城が落ち、豊臣秀頼と淀殿が自害して豊臣家は滅亡。真田信繁（幸村）は家康の本陣に迫って討死した。武力による全国の争いは終わりを迎える。' },

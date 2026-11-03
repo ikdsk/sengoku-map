@@ -68,8 +68,8 @@ const okLicense = (s) => !!s && LICENSE_OK.test(s.trim()) && !/-nc|-nd|\bnc\b|\b
 const stripHtml = (s) => (s || '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim();
 const fileFromUrl = (u) => {
   // https://upload.wikimedia.org/wikipedia/commons/a/ab/Name.jpg  または  .../thumb/a/ab/Name.jpg/330px-Name.jpg
-  const m = u.match(/\/wikipedia\/commons\/(?:thumb\/)?[0-9a-f]\/[0-9a-f]{2}\/([^/]+)/);
-  return m ? decodeURIComponent(m[1]) : null;
+  const m = u.replace(/[?#].*$/, '').match(/\/wikipedia\/commons\/(?:thumb\/)?[0-9a-f]\/[0-9a-f]{2}\/([^/]+)/);
+  return m ? decodeURIComponent(m[1]).replace(/_/g, ' ') : null;
 };
 
 async function summary(wiki) {
@@ -112,13 +112,13 @@ function record(t, sum, fileName, info, pageTitle) {
       kind: t.kind,
       label: t.label,
       file: info.title,
-      url: ii.url,
+      url: ii.url.replace(/[?#].*$/, ''),
       w: ii.width, h: ii.height,
       mime: ii.mime,
       artist: stripHtml(md.Artist?.value) || '不明',
       license,
       licenseUrl: md.LicenseUrl?.value || '',
-      filePage: ii.descriptionurl,
+      filePage: ii.descriptionurl.replace(/[?#].*$/, ''),
       article: pageTitle,
       articleUrl: 'https://ja.wikipedia.org/wiki/' + encodeURIComponent(pageTitle),
     },
@@ -142,46 +142,87 @@ async function fallbackFromArticle(t, pageTitle) {
   return null;
 }
 
+// ---- Wikidata ----
+async function wikidataClaims(qid) {
+  const j = await getJson('https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=claims&ids=' + qid);
+  return j?.entities?.[qid]?.claims || {};
+}
+const claimFiles = (claims, prop) => (claims[prop] || []).map((c) => c.mainsnak?.datavalue?.value).filter((v) => typeof v === 'string');
+const claimIds = (claims, prop) => (claims[prop] || []).map((c) => c.mainsnak?.datavalue?.value?.id).filter(Boolean);
+
+// 肖像として不適切なファイル名(墓・城・鎧・家紋・合戦図・地図・現代人の写真など)
+const BAD_PORTRAIT = /(墓|廟|城|鎧|具足|兜|甲冑|家紋|屏風|合戦|戦い|grave|tomb|cemetery|castle|armou?r|domaru|yoroi|helmet|kabuto|\bmon\b|crest|kamon|flag|banner|map|battle|screen|statue of|memorial|monument|shrine|temple|花押|kao\\b|signature|autograph|seal|stamp|\bgackt\b|20[0-2][0-9]|19[5-9][0-9])/i;
+const MON_HINT = /(mon\b|mon[_ .-]|crest|kamon|紋|emblem|seal|coat of arms|[_ ]mon\.)/i;
+
+const okPortrait = (nm) => /portrait|肖像/i.test(nm) ? !/(statue|grave|tomb|castle|armou?r|gackt)/i.test(nm) : !BAD_PORTRAIT.test(nm);
+
+async function pickFile(t, names, pageTitle, source, check) {
+  for (const name of names) {
+    if (check && !check(name)) { log(`    skip ${name} (name filter)`); continue; }
+    const infos = await commonsInfo([name]);
+    const info = infos[name] || Object.values(infos)[0];
+    if (!info) { log(`    no commons info for ${name}`); continue; }
+    const r = record(t, null, name, info, pageTitle);
+    if (r.ok) return { ...r.ok, source };
+    log(`    rejected ${name}: ${r.reject}`);
+  }
+  return null;
+}
+
+// 手動除外(取得できたが対象と一致しない画像): { key: 理由 }
+const EXCL_FILE = join(root, 'scripts/src/image-exclusions.json');
+const EXCL = existsSync(EXCL_FILE) ? JSON.parse(readFileSync(EXCL_FILE, 'utf8')) : {};
+for (const [k, why] of Object.entries(EXCL)) { delete images[k]; failures[k] = 'excluded: ' + why; }
+
 let n = 0;
-const todo = targets.filter((t) => !images[t.key] && (RETRY || !failures[t.key]));
-log(`# fetch start ${new Date().toISOString()} targets=${targets.length} cached=${targets.length - todo.length - Object.keys(failures).filter((k) => !images[k]).length} todo=${todo.length}`);
+const todo = targets.filter((t) => !images[t.key] && !EXCL[t.key] && (RETRY || !failures[t.key]));
+log(`# fetch start ${new Date().toISOString()} targets=${targets.length} todo=${todo.length}`);
 
 for (const t of todo) {
   n++;
   const tag = `[${n}/${todo.length}] ${t.key} (${t.wiki})`;
   try {
-    let fileName = OVERRIDES[t.key] || null;
-    let pageTitle = t.wiki;
-    let sum = null;
-    if (!fileName) {
-      sum = await summary(t.wiki);
+    const ov = OVERRIDES[t.key];
+    let sum = ov ? null : await summary(t.wiki);
+    if (!ov) {
       if (!sum) { failures[t.key] = 'no summary'; log(`${tag} FAIL no summary`); continue; }
       if (sum.type === 'disambiguation') { failures[t.key] = 'disambiguation'; log(`${tag} FAIL disambiguation page`); continue; }
-      pageTitle = sum.title;
       if (t.strict && sum.title !== t.wiki) { failures[t.key] = `title mismatch ${sum.title}`; log(`${tag} FAIL title mismatch: ${sum.title}`); continue; }
-      const src = sum.originalimage?.source || sum.thumbnail?.source;
-      fileName = src ? fileFromUrl(src) : null;
-      if (src && !fileName) log(`${tag} lead image is not a Commons file (skip): ${src}`);
     }
+    const pageTitle = sum?.title || t.wiki;
+    const leadSrc = sum?.originalimage?.source || sum?.thumbnail?.source;
+    const leadName = leadSrc ? fileFromUrl(leadSrc) : null;
+    let claims = {};
+    if (sum?.wikibase_item) claims = await wikidataClaims(sum.wikibase_item);
     let rec = null;
-    if (fileName) {
-      const infos = await commonsInfo([fileName]);
-      const info = infos[fileName] || Object.values(infos)[0];
-      if (info) {
-        const r = record(t, sum, fileName, info, pageTitle);
-        if (r.ok) rec = r.ok; else log(`${tag} lead image rejected: ${fileName} — ${r.reject}`);
-      } else log(`${tag} no commons info for ${fileName}`);
+    if (ov) rec = await pickFile(t, [ov], pageTitle, 'override');
+    else if (t.kind === 'portrait') {
+      // 人物: P31=Q5 を確認し、Wikidata P18 → 記事リード画像(名前フィルタ付き)の順。記事内の任意画像は使わない。
+      if (!claimIds(claims, 'P31').includes('Q5')) { failures[t.key] = 'wikidata: not human (P31!=Q5) or no item'; log(`${tag} FAIL not human/no wikidata`); continue; }
+      rec = await pickFile(t, claimFiles(claims, 'P18'), pageTitle, 'P18', okPortrait);
+      if (!rec && leadName) rec = await pickFile(t, [leadName], pageTitle, 'lead', okPortrait);
+    } else if (t.kind === 'mon') {
+      // 家紋: Wikidata P94(紋章) → P158(印章) → 記事リード画像(家紋らしい名前のもの) → Commons検索(家紋SVG)
+      rec = await pickFile(t, [...claimFiles(claims, 'P94'), ...claimFiles(claims, 'P158')], pageTitle, 'P94');
+      if (!rec && leadName) rec = await pickFile(t, [leadName], pageTitle, 'lead', (nm) => MON_HINT.test(nm));
+    } else if (t.kind === 'castle') {
+      rec = leadName ? await pickFile(t, [leadName], pageTitle, 'lead') : null;
+      if (!rec) rec = await pickFile(t, claimFiles(claims, 'P18'), pageTitle, 'P18');
+    } else { // battle / event
+      rec = leadName ? await pickFile(t, [leadName], pageTitle, 'lead') : null;
+      if (!rec) rec = await pickFile(t, claimFiles(claims, 'P18'), pageTitle, 'P18');
     }
-    if (!rec && t.kind !== 'portrait') rec = await fallbackFromArticle(t, pageTitle);
-    if (!rec && t.kind === 'portrait') rec = await fallbackFromArticle(t, pageTitle); // 肖像は最後の手段
-    if (!rec) { failures[t.key] = 'no usable image'; log(`${tag} FAIL no usable image`); continue; }
+    if (!rec && (t.kind === 'battle' || t.kind === 'castle')) {
+      const fb = await fallbackFromArticle(t, pageTitle);
+      if (fb) rec = { ...fb, source: 'article-image' };
+    }
+    if (!rec) { failures[t.key] = 'no usable image (placeholder)'; log(`${tag} FAIL no usable image -> placeholder`); continue; }
     images[t.key] = rec;
     delete failures[t.key];
-    log(`${tag} OK ${rec.file} [${rec.license}]`);
+    log(`${tag} OK ${rec.file} [${rec.license}] source=${rec.source}`);
   } catch (e) {
     log(`${tag} ERROR ${e.message}`);
   }
-  // 定期保存(途中で止めても再開できる)
   if (n % 10 === 0) save();
 }
 save();
