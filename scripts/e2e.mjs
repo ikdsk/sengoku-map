@@ -45,7 +45,7 @@ ws.addEventListener('message', (e) => { const m = JSON.parse(e.data); if (m.meth
 
 async function viewport(kind) {
   if (kind === 'mobile') await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 2, mobile: true });
-  else await send('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false });
+  else await send('Emulation.setDeviceMetricsOverride', { width: 1280, height: 1100, deviceScaleFactor: 1, mobile: false });
 }
 async function open(hash, reload) {
   if (reload) await send('Page.navigate', { url: 'about:blank' });
@@ -113,8 +113,10 @@ async function suite(kind) {
   for (const [y, name] of yearShots) {
     await open(`#/year/${y}`);
     await sleep(300);
-    await scrollTo('.year-banner');
+    await ev(`document.getElementById('map').scrollIntoView({behavior:'instant'}); 1`);
     await sleep(2200);
+    const hd = await ev(`({t: document.getElementById('map-title').getBoundingClientRect().top, h: document.querySelector('.site-head').getBoundingClientRect().bottom})`);
+    check(`${kind}: ${y}年 遷移後に見出しが固定ヘッダーに隠れない`, hd.t >= hd.h - 1, JSON.stringify(hd));
     const info = await ev(`({year: document.getElementById('year-num').textContent, hash: location.hash, slider: +document.getElementById('year-slider').value, fills: [...document.querySelectorAll('#main-map .prov')].map(p=>p.getAttribute('fill')).join('|'), top: [...document.querySelectorAll('.rk-row')].filter(r=>r.style.opacity==='1').sort((a,b)=>a.firstChild.textContent-b.firstChild.textContent).slice(0,3).map(r=>r.dataset.clan+':'+r.querySelector('.rk-n').textContent)})`);
     check(`${kind}: #/year/${y} で ${y}年を表示`, info.year === String(y), JSON.stringify(info.top));
     if (prevFills) check(`${kind}: ${y}年は前の年と地図の色が異なる`, info.fills !== prevFills);
@@ -173,6 +175,8 @@ async function suite(kind) {
   await open('#/event/honnoji'); await sleep(2500); await settleImages(8000);
   const st = await ev(`({y: document.getElementById('story-year').textContent, active: document.querySelector('.ev-card.active')?.id})`);
   check(`${kind}: ストーリーで本能寺の変の年(1582)へ`, st.y === '1582', JSON.stringify(st));
+  const sv = await ev(`(()=>{const m=document.querySelector('#story-map .jp-map'); const r=m.getBoundingClientRect(); const fills=[...m.querySelectorAll('.prov')].map(p=>p.getAttribute('fill')).filter(f=>f&&f!=='none'); return {top:r.top,bottom:r.bottom,left:r.left,right:r.right,w:r.width,h:r.height,vh:innerHeight,vw:innerWidth,fills:fills.length}})()`);
+  check(`${kind}: ストーリー画面で地図SVGが可視範囲にあり塗り色を持つ`, sv.w > 100 && sv.top >= 0 && sv.bottom <= sv.vh + 1 && sv.right <= sv.vw && sv.fills === 69 && (kind === 'mobile' || sv.left < sv.vw / 2), JSON.stringify(sv));
   await shot(`${pre}07-story.png`);
   // スクロール連動
   await scrollTo('#ev-okehazama', 'center'); await sleep(2200);

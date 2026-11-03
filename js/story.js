@@ -29,7 +29,7 @@
     };
     SG.S.events.forEach((e, i) => {
       const key = 'event:' + e.id;
-      const fig = SG.el('figure', { class: 'ev-fig' }, SG.el('div', { class: 'ev-img' }, SG.img(key, { w: 960, alt: e.title })), credit(key));
+      const fig = SG.el('figure', { class: 'ev-fig' }, SG.el('div', { class: 'ev-img' }, SG.img(key, { w: 960, alt: e.title })), credit(key), e.imgNote ? SG.el('figcaption', { class: 'credit note' }, '※ ' + e.imgNote) : null);
       const faces = SG.el('div', { class: 'ev-faces' }, e.people.map((pid) => { const p = SG.personById[pid]; return p ? SG.el('a', { class: 'mini-face', href: '#/person/' + pid, title: p.name }, SG.img('person:' + pid, { w: 120, alt: p.name }), SG.el('span', null, p.name)) : null; }));
       const clans = SG.el('p', { class: 'ev-clans' }, e.clans.map((cid) => { const c = SG.clanById[cid]; return c.detail ? SG.el('a', { class: 'clan-chip', href: '#/clan/' + cid }, SG.el('i', { class: 'chip', style: `background:${c.color}` }), c.name) : null; }));
       const li = SG.el('li', { class: 'ev-card', id: 'ev-' + e.id, 'data-snap': e.snapshot, 'data-year': e.year },

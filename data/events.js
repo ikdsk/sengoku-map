@@ -26,7 +26,7 @@ window.SENGOKU.events = [
     text: '京都の本能寺に滞在中の織田信長を、重臣の明智光秀が襲撃。信長・信忠父子は自害した。備中高松城から急ぎ戻った羽柴秀吉が山崎の戦いで光秀を倒し、織田政権の主導権を握る。' },
   { id: 'komaki', year: 1584, snapshot: 1584, date: '1584年（天正12年）', title: '小牧・長久手の戦い', wiki: '小牧・長久手の戦い', people: ['toyotomi-hideyoshi', 'tokugawa-ieyasu', 'oda-nobukatsu'], clans: ['toyotomi', 'tokugawa', 'oda'],
     text: '織田信雄・徳川家康が羽柴秀吉と尾張北部で対峙。家康は長久手で局地戦に勝ったが、秀吉は信雄との単独講和で大義を失わせた。家康は後に秀吉に臣従する。' },
-  { id: 'kyushu', year: 1587, snapshot: 1587, date: '1587年（天正15年）', title: '九州平定', wiki: '九州平定', people: ['toyotomi-hideyoshi', 'shimazu-yoshihisa', 'otomo-sorin'], clans: ['toyotomi', 'shimazu', 'otomo'],
+  { id: 'kyushu', year: 1587, snapshot: 1587, date: '1587年（天正15年）', title: '九州平定', wiki: '九州平定', imgNote: '図版は九州地方の地図です。九州平定そのものを描いた絵ではなく、代替の図版です。', people: ['toyotomi-hideyoshi', 'shimazu-yoshihisa', 'otomo-sorin'], clans: ['toyotomi', 'shimazu', 'otomo'],
     text: '島津氏の北上で苦境に陥った大友宗麟が秀吉に救援を求め、秀吉は約20万の大軍で九州へ出兵。島津義久は降伏し、薩摩・大隅などの領有を許された。' },
   { id: 'odawara', year: 1590, snapshot: 1590, date: '1590年（天正18年）', title: '小田原征伐', wiki: '小田原征伐', people: ['toyotomi-hideyoshi', 'hojo-ujimasa', 'date-masamune', 'tokugawa-ieyasu'], clans: ['toyotomi', 'hojo', 'date', 'tokugawa'],
     text: '豊臣秀吉が約20万の大軍で小田原城を包囲。北条氏は降伏し、氏政は切腹した。伊達政宗らも秀吉に服属し、天下統一が完成。家康は関東に移封される。' },

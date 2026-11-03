@@ -1,4 +1,7 @@
 {
  "mon:kono": "Wikidata P94 が別氏族(因幡)の紋で河野氏の家紋と一致しないため除外",
- "person:imagawa-ujichika": "リード画像が花押(署名)で肖像ではないため除外(プレースホルダ)"
+ "person:imagawa-ujichika": "リード画像が花押(署名)で肖像ではないため除外(プレースホルダ)",
+ "person:imagawa-ujizane": "目視確認: 肖像画が損傷し頭部が無く衣服の一部のみで人物の肖像として不適切のため除外(プレースホルダ)",
+ "person:shimazu-yoshihisa": "目視確認: 暗い背景の白黒写真(像か不明)で肖像画として確認できないため除外(プレースホルダ)",
+ "mon:mogami": "Wikidata P94 が足利氏の家紋ファイル(Ashikaga mon.svg)で最上氏固有の紋ではないため除外(プレースホルダ)"
 }

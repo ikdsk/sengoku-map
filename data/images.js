@@ -100,18 +100,18 @@ window.SENGOKU.images = {
  "event:kawanakajima": {
   "kind": "battle",
   "label": "第四次川中島の戦い",
-  "file": "Sengoku period battle.jpg",
-  "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Sengoku_period_battle.jpg",
-  "w": 590,
-  "h": 828,
+  "file": "Uesugi Kenshin and Takeda Shingen at the Battle of Kawanakajima.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Uesugi_Kenshin_and_Takeda_Shingen_at_the_Battle_of_Kawanakajima.jpg",
+  "w": 1408,
+  "h": 1500,
   "mime": "image/jpeg",
-  "artist": "Unknown authorUnknown author",
+  "artist": "Torii Kiyomasu",
   "license": "Public domain",
   "licenseUrl": "",
-  "filePage": "https://commons.wikimedia.org/wiki/File:Sengoku_period_battle.jpg",
+  "filePage": "https://commons.wikimedia.org/wiki/File:Uesugi_Kenshin_and_Takeda_Shingen_at_the_Battle_of_Kawanakajima.jpg",
   "article": "川中島の戦い",
   "articleUrl": "https://ja.wikipedia.org/wiki/%E5%B7%9D%E4%B8%AD%E5%B3%B6%E3%81%AE%E6%88%A6%E3%81%84",
-  "source": "P18"
+  "source": "override"
  },
  "event:komaki": {
   "kind": "battle",
@@ -511,22 +511,6 @@ window.SENGOKU.images = {
   "filePage": "https://commons.wikimedia.org/wiki/File:Japanese_crest_Sanngai_Hisi_ni_itutu_Kuginuki.svg",
   "article": "三好氏",
   "articleUrl": "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%A5%BD%E6%B0%8F",
-  "source": "P94"
- },
- "mon:mogami": {
-  "kind": "mon",
-  "label": "最上家の家紋",
-  "file": "Ashikaga mon.svg",
-  "url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Ashikaga_mon.svg",
-  "w": 200,
-  "h": 200,
-  "mime": "image/svg+xml",
-  "artist": "Ash Crow",
-  "license": "CC BY 2.5",
-  "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
-  "filePage": "https://commons.wikimedia.org/wiki/File:Ashikaga_mon.svg",
-  "article": "最上氏",
-  "articleUrl": "https://ja.wikipedia.org/wiki/%E6%9C%80%E4%B8%8A%E6%B0%8F",
   "source": "P94"
  },
  "mon:mori": {
@@ -1169,22 +1153,6 @@ window.SENGOKU.images = {
   "articleUrl": "https://ja.wikipedia.org/wiki/%E4%BA%95%E4%BC%8A%E7%9B%B4%E6%94%BF",
   "source": "P18"
  },
- "person:imagawa-ujizane": {
-  "kind": "portrait",
-  "label": "今川氏真",
-  "file": "今川氏真像（個人像）.jpg",
-  "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/%E4%BB%8A%E5%B7%9D%E6%B0%8F%E7%9C%9F%E5%83%8F%EF%BC%88%E5%80%8B%E4%BA%BA%E5%83%8F%EF%BC%89.jpg",
-  "w": 1323,
-  "h": 3354,
-  "mime": "image/jpeg",
-  "artist": "未詳。",
-  "license": "Public domain",
-  "licenseUrl": "",
-  "filePage": "https://commons.wikimedia.org/wiki/File:%E4%BB%8A%E5%B7%9D%E6%B0%8F%E7%9C%9F%E5%83%8F%EF%BC%88%E5%80%8B%E4%BA%BA%E5%83%8F%EF%BC%89.jpg",
-  "article": "今川氏真",
-  "articleUrl": "https://ja.wikipedia.org/wiki/%E4%BB%8A%E5%B7%9D%E6%B0%8F%E7%9C%9F",
-  "source": "P18"
- },
  "person:imagawa-yoshimoto": {
   "kind": "portrait",
   "label": "今川義元",
@@ -1697,22 +1665,6 @@ window.SENGOKU.images = {
   "articleUrl": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E7%BE%A9%E5%BC%98",
   "source": "P18"
  },
- "person:shimazu-yoshihisa": {
-  "kind": "portrait",
-  "label": "島津義久",
-  "file": "Yoshihisa shimadzu.jpg",
-  "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Yoshihisa_shimadzu.jpg",
-  "w": 351,
-  "h": 500,
-  "mime": "image/jpeg",
-  "artist": "Ginger1192",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "filePage": "https://commons.wikimedia.org/wiki/File:Yoshihisa_shimadzu.jpg",
-  "article": "島津義久",
-  "articleUrl": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E7%BE%A9%E4%B9%85",
-  "source": "P18"
- },
  "person:sue-harukata": {
   "kind": "portrait",
   "label": "陶晴賢",
@@ -1892,18 +1844,18 @@ window.SENGOKU.images = {
  "person:yamana-sozen": {
   "kind": "portrait",
   "label": "山名宗全",
-  "file": "山名持豊.jpg",
-  "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/%E5%B1%B1%E5%90%8D%E6%8C%81%E8%B1%8A.jpg",
-  "w": 726,
-  "h": 970,
+  "file": "Dai Nihon Rokujūyoshō, Bingo Yamana Uemonnokami Mochitoyo Nyūdō Sōzen by Yoshitora.jpg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Dai_Nihon_Rokuj%C5%AByosh%C5%8D%2C_Bingo_Yamana_Uemonnokami_Mochitoyo_Ny%C5%ABd%C5%8D_S%C5%8Dzen_by_Yoshitora.jpg",
+  "w": 1024,
+  "h": 1527,
   "mime": "image/jpeg",
-  "artist": "Musuketeer.3",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "filePage": "https://commons.wikimedia.org/wiki/File:%E5%B1%B1%E5%90%8D%E6%8C%81%E8%B1%8A.jpg",
+  "artist": "Utagawa Yoshitora",
+  "license": "Public domain",
+  "licenseUrl": "",
+  "filePage": "https://commons.wikimedia.org/wiki/File:Dai_Nihon_Rokuj%C5%AByosh%C5%8D,_Bingo_Yamana_Uemonnokami_Mochitoyo_Ny%C5%ABd%C5%8D_S%C5%8Dzen_by_Yoshitora.jpg",
   "article": "山名宗全",
   "articleUrl": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%90%8D%E5%AE%97%E5%85%A8",
-  "source": "P18"
+  "source": "override"
  },
  "person:yamanaka-shikanosuke": {
   "kind": "portrait",

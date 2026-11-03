@@ -11,7 +11,7 @@
 画像は upload.wikimedia.org からホットリンクしており、リポジトリにはコピーを置いていません。許可ライセンスは PD・CC0・CC BY・CC BY-SA のみです。
 サイト内「画像クレジット」ページにも同じ一覧があります。
 
-### 人物の肖像（68点）
+### 人物の肖像（66点）
 
 | 対象 | ファイル | 作者 | ライセンス | 取得元 |
 |---|---|---|---|---|
@@ -36,7 +36,6 @@
 | 細川勝元 (person:hosokawa-katsumoto) | [Hosokawa Katsumoto.jpg](https://commons.wikimedia.org/wiki/File:Hosokawa_Katsumoto.jpg) | Unknown | Public domain | P18 / [細川勝元](https://ja.wikipedia.org/wiki/%E7%B4%B0%E5%B7%9D%E5%8B%9D%E5%85%83) |
 | 細川政元 (person:hosokawa-masamoto) | [Hosokawa Masamoto.jpg](https://commons.wikimedia.org/wiki/File:Hosokawa_Masamoto.jpg) | Morita Ekishin | Public domain | P18 / [細川政元](https://ja.wikipedia.org/wiki/%E7%B4%B0%E5%B7%9D%E6%94%BF%E5%85%83) |
 | 井伊直政 (person:ii-naomasa) | [Ii Naomasa.jpg](https://commons.wikimedia.org/wiki/File:Ii_Naomasa.jpg) | Unknown authorUnknown author | Public domain | P18 / [井伊直政](https://ja.wikipedia.org/wiki/%E4%BA%95%E4%BC%8A%E7%9B%B4%E6%94%BF) |
-| 今川氏真 (person:imagawa-ujizane) | [今川氏真像（個人像）.jpg](https://commons.wikimedia.org/wiki/File:%E4%BB%8A%E5%B7%9D%E6%B0%8F%E7%9C%9F%E5%83%8F%EF%BC%88%E5%80%8B%E4%BA%BA%E5%83%8F%EF%BC%89.jpg) | 未詳。 | Public domain | P18 / [今川氏真](https://ja.wikipedia.org/wiki/%E4%BB%8A%E5%B7%9D%E6%B0%8F%E7%9C%9F) |
 | 今川義元 (person:imagawa-yoshimoto) | [Imagawa-Yoshimoto-Ukiyo-e.jpg](https://commons.wikimedia.org/wiki/File:Imagawa-Yoshimoto-Ukiyo-e.jpg) | Utagawa Kuniyoshi | Public domain | P18 / [今川義元](https://ja.wikipedia.org/wiki/%E4%BB%8A%E5%B7%9D%E7%BE%A9%E5%85%83) |
 | 石田三成 (person:ishida-mitsunari) | [Ishida Mitsunari.jpg](https://commons.wikimedia.org/wiki/File:Ishida_Mitsunari.jpg) | Unknown authorUnknown author | Public domain | P18 / [石田三成](https://ja.wikipedia.org/wiki/%E7%9F%B3%E7%94%B0%E4%B8%89%E6%88%90) |
 | 加藤清正 (person:kato-kiyomasa) | [Katō Kiyomasa.jpg](https://commons.wikimedia.org/wiki/File:Kat%C5%8D_Kiyomasa.jpg) | Unknown authorUnknown author | Public domain | P18 / [加藤清正](https://ja.wikipedia.org/wiki/%E5%8A%A0%E8%97%A4%E6%B8%85%E6%AD%A3) |
@@ -69,7 +68,6 @@
 | 柴田勝家 (person:shibata-katsuie) | [Shibata katsuie.png](https://commons.wikimedia.org/wiki/File:Shibata_katsuie.png) | Unknown authorUnknown author | Public domain | P18 / [柴田勝家](https://ja.wikipedia.org/wiki/%E6%9F%B4%E7%94%B0%E5%8B%9D%E5%AE%B6) |
 | 島津貴久 (person:shimazu-takahisa) | [Shimazu Takahisa.jpg](https://commons.wikimedia.org/wiki/File:Shimazu_Takahisa.jpg) | Unknown authorUnknown author | Public domain | P18 / [島津貴久](https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E8%B2%B4%E4%B9%85) |
 | 島津義弘 (person:shimazu-yoshihiro) | [Shimazu Yoshihiro.jpg](https://commons.wikimedia.org/wiki/File:Shimazu_Yoshihiro.jpg) | 不明。 | Public domain | P18 / [島津義弘](https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E7%BE%A9%E5%BC%98) |
-| 島津義久 (person:shimazu-yoshihisa) | [Yoshihisa shimadzu.jpg](https://commons.wikimedia.org/wiki/File:Yoshihisa_shimadzu.jpg) | Ginger1192 | CC BY-SA 3.0 | P18 / [島津義久](https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E7%BE%A9%E4%B9%85) |
 | 陶晴賢 (person:sue-harukata) | [Sue Harukata by Zoku Eiyu Hyakunin Isshu.jpg](https://commons.wikimedia.org/wiki/File:Sue_Harukata_by_Zoku_Eiyu_Hyakunin_Isshu.jpg) | 緑亭川柳輯・前北斎卍老人 他 | Public domain | P18 / [陶晴賢](https://ja.wikipedia.org/wiki/%E9%99%B6%E6%99%B4%E8%B3%A2) |
 | 武田勝頼 (person:takeda-katsuyori) | [Takeda Katsuyori.jpg](https://commons.wikimedia.org/wiki/File:Takeda_Katsuyori.jpg) | Unknown authorUnknown author | Public domain | P18 / [武田勝頼](https://ja.wikipedia.org/wiki/%E6%AD%A6%E7%94%B0%E5%8B%9D%E9%A0%BC) |
 | 武田信虎 (person:takeda-nobutora) | [Takeda Nobutora by Takeda Nobukado (Daisenji Kofu).jpg](https://commons.wikimedia.org/wiki/File:Takeda_Nobutora_by_Takeda_Nobukado_(Daisenji_Kofu).jpg) | Takeda Nobukado | Public domain | P18 / [武田信虎](https://ja.wikipedia.org/wiki/%E6%AD%A6%E7%94%B0%E4%BF%A1%E8%99%8E) |
@@ -81,10 +79,10 @@
 | 豊臣秀吉 (person:toyotomi-hideyoshi) | [Toyotomi Hideyoshi (Kodaiji).jpg](https://commons.wikimedia.org/wiki/File:Toyotomi_Hideyoshi_(Kodaiji).jpg) | Kanō Mitsunobu | Public domain | P18 / [豊臣秀吉](https://ja.wikipedia.org/wiki/%E8%B1%8A%E8%87%A3%E7%A7%80%E5%90%89) |
 | 上杉景勝 (person:uesugi-kagekatsu) | [Uesugi Kagekatsu Portrait Yonezawa City Uesugi Museum.png](https://commons.wikimedia.org/wiki/File:Uesugi_Kagekatsu_Portrait_Yonezawa_City_Uesugi_Museum.png) | Unknown authorUnknown author | Public domain | P18 / [上杉景勝](https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%99%AF%E5%8B%9D) |
 | 上杉謙信 (person:uesugi-kenshin) | [Uesugi Kenshin Portrait from Uesugi Shrine.png](https://commons.wikimedia.org/wiki/File:Uesugi_Kenshin_Portrait_from_Uesugi_Shrine.png) | Unknown authorUnknown author | Public domain | P18 / [上杉謙信](https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E8%AC%99%E4%BF%A1) |
-| 山名宗全 (person:yamana-sozen) | [山名持豊.jpg](https://commons.wikimedia.org/wiki/File:%E5%B1%B1%E5%90%8D%E6%8C%81%E8%B1%8A.jpg) | Musuketeer.3 | CC BY-SA 3.0 | P18 / [山名宗全](https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%90%8D%E5%AE%97%E5%85%A8) |
+| 山名宗全 (person:yamana-sozen) | [Dai Nihon Rokujūyoshō, Bingo Yamana Uemonnokami Mochitoyo Nyūdō Sōzen by Yoshitora.jpg](https://commons.wikimedia.org/wiki/File:Dai_Nihon_Rokuj%C5%AByosh%C5%8D,_Bingo_Yamana_Uemonnokami_Mochitoyo_Ny%C5%ABd%C5%8D_S%C5%8Dzen_by_Yoshitora.jpg) | Utagawa Yoshitora | Public domain | override / [山名宗全](https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%90%8D%E5%AE%97%E5%85%A8) |
 | 山中鹿介 (person:yamanaka-shikanosuke) | [Taiheikieiyuden 36 YamanakaYukimori.jpg](https://commons.wikimedia.org/wiki/File:Taiheikieiyuden_36_YamanakaYukimori.jpg) | 落合芳幾 | Public domain | P18 / [山中幸盛](https://ja.wikipedia.org/wiki/%E5%B1%B1%E4%B8%AD%E5%B9%B8%E7%9B%9B) |
 
-### 家紋（36点）
+### 家紋（35点）
 
 | 対象 | ファイル | 作者 | ライセンス | 取得元 |
 |---|---|---|---|---|
@@ -104,7 +102,6 @@
 | 菊池家の家紋 (mon:kikuchi) | [Japanese crest narabi Takanoha.svg](https://commons.wikimedia.org/wiki/File:Japanese_crest_narabi_Takanoha.svg) | Mukai | CC BY-SA 3.0 | P94 / [菊池氏](https://ja.wikipedia.org/wiki/%E8%8F%8A%E6%B1%A0%E6%B0%8F) |
 | 松浦家の家紋 (mon:matsura) | [Japanese Crest Matsura mitu Hosi.svg](https://commons.wikimedia.org/wiki/File:Japanese_Crest_Matsura_mitu_Hosi.svg) | user:Mukai | CC BY-SA 3.0 | P94 / [松浦氏](https://ja.wikipedia.org/wiki/%E6%9D%BE%E6%B5%A6%E6%B0%8F) |
 | 三好家の家紋 (mon:miyoshi) | [Japanese crest Sanngai Hisi ni itutu Kuginuki.svg](https://commons.wikimedia.org/wiki/File:Japanese_crest_Sanngai_Hisi_ni_itutu_Kuginuki.svg) | Mukai | CC BY-SA 3.0 | P94 / [三好氏](https://ja.wikipedia.org/wiki/%E4%B8%89%E5%A5%BD%E6%B0%8F) |
-| 最上家の家紋 (mon:mogami) | [Ashikaga mon.svg](https://commons.wikimedia.org/wiki/File:Ashikaga_mon.svg) | Ash Crow | CC BY 2.5 | P94 / [最上氏](https://ja.wikipedia.org/wiki/%E6%9C%80%E4%B8%8A%E6%B0%8F) |
 | 毛利家の家紋 (mon:mori) | [Alex K Hiroshima Mori (color).svg](https://commons.wikimedia.org/wiki/File:Alex_K_Hiroshima_Mori_(color).svg) | Alex Tora | CC BY-SA 3.0 | P94 / [毛利氏](https://ja.wikipedia.org/wiki/%E6%AF%9B%E5%88%A9%E6%B0%8F) |
 | 織田家の家紋 (mon:oda) | [Oda emblem.svg](https://commons.wikimedia.org/wiki/File:Oda_emblem.svg) | No machine-readable author provided. Gilyellows assumed (based on copyright clai | CC BY-SA 3.0 | P94 / [織田氏](https://ja.wikipedia.org/wiki/%E7%B9%94%E7%94%B0%E6%B0%8F) |
 | 大友家の家紋 (mon:otomo) | [Japanese Crest Daki hana Gyouyou.svg](https://commons.wikimedia.org/wiki/File:Japanese_Crest_Daki_hana_Gyouyou.svg) | Mukai | CC BY-SA 3.0 | P94 / [大友氏](https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%8F%8B%E6%B0%8F) |
@@ -135,7 +132,7 @@
 | 朝倉・浅井の滅亡と室町幕府の終わり (event:ichijodani) | [Asakura Yakata of Ichijodani Asakura Family Historic Ruins02s3s4440.jpg](https://commons.wikimedia.org/wiki/File:Asakura_Yakata_of_Ichijodani_Asakura_Family_Historic_Ruins02s3s4440.jpg) | 663highland | CC BY 2.5 | lead / [一乗谷朝倉氏遺跡](https://ja.wikipedia.org/wiki/%E4%B8%80%E4%B9%97%E8%B0%B7%E6%9C%9D%E5%80%89%E6%B0%8F%E9%81%BA%E8%B7%A1) |
 | 厳島の戦い (event:itsukushima) | [ItsukushimaTorii7396.jpg](https://commons.wikimedia.org/wiki/File:ItsukushimaTorii7396.jpg) | 不明 | Public domain | lead / [厳島の戦い](https://ja.wikipedia.org/wiki/%E5%8E%B3%E5%B3%B6%E3%81%AE%E6%88%A6%E3%81%84) |
 | 河越夜戦 (event:kawagoe) | [東明寺 川越夜戦碑.jpg](https://commons.wikimedia.org/wiki/File:%E6%9D%B1%E6%98%8E%E5%AF%BA_%E5%B7%9D%E8%B6%8A%E5%A4%9C%E6%88%A6%E7%A2%91.jpg) | Uk4192 | CC BY-SA 4.0 | lead / [河越城の戦い](https://ja.wikipedia.org/wiki/%E6%B2%B3%E8%B6%8A%E5%9F%8E%E3%81%AE%E6%88%A6%E3%81%84) |
-| 第四次川中島の戦い (event:kawanakajima) | [Sengoku period battle.jpg](https://commons.wikimedia.org/wiki/File:Sengoku_period_battle.jpg) | Unknown authorUnknown author | Public domain | P18 / [川中島の戦い](https://ja.wikipedia.org/wiki/%E5%B7%9D%E4%B8%AD%E5%B3%B6%E3%81%AE%E6%88%A6%E3%81%84) |
+| 第四次川中島の戦い (event:kawanakajima) | [Uesugi Kenshin and Takeda Shingen at the Battle of Kawanakajima.jpg](https://commons.wikimedia.org/wiki/File:Uesugi_Kenshin_and_Takeda_Shingen_at_the_Battle_of_Kawanakajima.jpg) | Torii Kiyomasu | Public domain | override / [川中島の戦い](https://ja.wikipedia.org/wiki/%E5%B7%9D%E4%B8%AD%E5%B3%B6%E3%81%AE%E6%88%A6%E3%81%84) |
 | 小牧・長久手の戦い (event:komaki) | [Komaki Nagakute Kassen Zu Byoubu, Toyota.jpg](https://commons.wikimedia.org/wiki/File:Komaki_Nagakute_Kassen_Zu_Byoubu,_Toyota.jpg) | 不詳 | Public domain | lead / [小牧・長久手の戦い](https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%89%A7%E3%83%BB%E9%95%B7%E4%B9%85%E6%89%8B%E3%81%AE%E6%88%A6%E3%81%84) |
 | 九州平定 (event:kyushu) | [Japan Kyushu Kagoshima.png](https://commons.wikimedia.org/wiki/File:Japan_Kyushu_Kagoshima.png) | No machine-readable author provided. Akanemoto~commonswiki assumed (based on cop | Public domain | P18 / [九州平定](https://ja.wikipedia.org/wiki/%E4%B9%9D%E5%B7%9E%E5%B9%B3%E5%AE%9A) |
 | 明応の政変 (event:meio) | [Ashikaga Yoshitane statue.jpg](https://commons.wikimedia.org/wiki/File:Ashikaga_Yoshitane_statue.jpg) | 不明 | Public domain | article-image / [明応の政変](https://ja.wikipedia.org/wiki/%E6%98%8E%E5%BF%9C%E3%81%AE%E6%94%BF%E5%A4%89) |
